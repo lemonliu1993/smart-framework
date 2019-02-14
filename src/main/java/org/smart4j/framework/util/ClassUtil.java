@@ -19,7 +19,7 @@ import java.util.jar.JarFile;
  * 类操作工具类
  * Created by lemoon on 19/1/27 上午9:33
  */
-public class ClassUtil {
+public final class ClassUtil {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ClassUtil.class);
 
@@ -33,6 +33,7 @@ public class ClassUtil {
 
     /**
      * 加载类
+     * 为提高加载类的性能，可讲loadClass方法的isInitialized参数设置为false
      */
     public static Class<?> loadClass(String className, boolean isInitialized){
         //加载类需要提供类名与是否初始化的标识，这里提到的初始化指是否执行类的静态代码块

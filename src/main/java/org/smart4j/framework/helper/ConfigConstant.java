@@ -1,3 +1,5 @@
+package org.smart4j.framework.helper;
+
 /**
  *
  * 提供相关配置项常量
