@@ -29,3 +29,5 @@ BeanHelper:BeanHelper相当于一个"Bean容器"，传入一个Bean类，就能�
 IocHelper:遍历BeanHelper获取所有Bean Map。遍历这个映射关系，分别取出Bean类与Bean实例，进而通过反射获取类中所有的成员变量。
 继续遍历这些成员遍历，在循环中判断当前成员遍历是否带有Inject注解，若带有该注解，则从Bean Map中根据Bean类取出Bean实例。
 最后通过ReflectionUtil#setField方法来修改当前成员变量的值。
+
+Handler对象获取Action的返回值，该返回值可能有两种情况：
