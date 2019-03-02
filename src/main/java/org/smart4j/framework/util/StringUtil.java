@@ -23,4 +23,11 @@ public class StringUtil {
         return !isEmpty(str);
     }
 
+    /**
+     * 分割字符串
+     */
+    public static String[] splitString(String str,String regex){
+        return str.trim().split(regex);
+    }
+
 }
