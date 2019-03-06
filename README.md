@@ -44,3 +44,8 @@ DispatcherServlet:MVC架构中最核心的类
 
 在DynamicProxy类中，定义了一个Object类型的target变量，它就是被代理的目标对象，通过构造函数来初始化。
 DynamicProxy实现了InvocationHandler接口，那么必须实现该接口的invoke方法。
+
+使用DynamicProxy的好处是，接口变了，这个动态代理类不用动。而静态代理就不一样了，接口变了，实现类还要动。
+但动态代理也有搞不定的时候，比如要代理一个没有任何接口的类，它就没有用武之地了。
+这时候就该使用CGLib了，它是一个在运行期间动态生成字节码的工具，也就是动态生成代理类了。
+CGLib提供的是方法级别的代理，也可以理解胃对方法的拦截(传说中的"方法拦截器").我们直接调用proxy的invokeSuper方法，将被代理的对象obj以及方法参数args传入其中即可
