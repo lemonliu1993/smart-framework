@@ -33,3 +33,14 @@ IocHelper:遍历BeanHelper获取所有Bean Map。遍历这个映射关系，分�
 Handler对象获取Action的返回值，该返回值可能有两种情况：
 
 DispatcherServlet:MVC架构中最核心的类
+
+### AOP
+对方法进行监控，也就是说，在方法调用的时候统计出方法执行时间。
+不修改现有代码，在另外一个地方座性能监控。AOP(面向切面编程)
+#### 
+在AOP中，我们需要定义一个Aspect(切面)类来编写需要横切业务逻辑的代码，也就是上面提到的性能监控代码。此外，我们需要通过一个条件来匹配想要拦截的类，这个条件在AOP中成为PointCut(切点)。
+例如：统计出执行每个Controller类的各个方法所消耗的时间。每个Controller类都带有Controller注解，也就是说，我们只需要拦截所有带有Controller注解的类就行了，切点很容易就能确定下来，剩下的就是做一个切面了。
+代理：意思就是你不用去做，别人代替你去处理。
+
+在DynamicProxy类中，定义了一个Object类型的target变量，它就是被代理的目标对象，通过构造函数来初始化。
+DynamicProxy实现了InvocationHandler接口，那么必须实现该接口的invoke方法。
